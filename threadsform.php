@@ -5,11 +5,12 @@
 
 
 require_once('function.php');
-require_once('Threads.php');
+require_once('Model/Threads.php');
+//require_once('Comments.php');
 
-$thread = new Threads();
-//$comment = new comments();
-//$comments = $comment->getAll();
+$id = $_GET['id'];
+$thread = (new Threads())->get($id);
+
 
 ?>
 
@@ -33,16 +34,15 @@ $thread = new Threads();
     <div class="thread_main"></div>
 
     <div class="main_thread">
-    <?php foreach ($threads as $thread) : ?>
                 <div class="">
-                            <h1 class="card-title"><?= h($thread["title"]); ?></h1>
-                                <?= h($thread["comments"]); ?>
-                            </p>
-                            
-                        </div>
-                    </div>
+                    <h1 class="card-title"><?= h($thread["title"]); ?></h1>
+                    <?= h($thread["comment"]); ?>
+                    </p>
                 </div>
-            <?php endforeach; ?>
     </div>
+<div class="comment_space">
+
+</div>
+
 </body>
 </html>

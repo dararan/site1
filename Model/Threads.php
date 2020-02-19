@@ -1,5 +1,7 @@
 <?php
 
+require_once('Model.php');
+
 class Threads extends Model
 {
     protected $table = 'threads';
@@ -8,7 +10,7 @@ class Threads extends Model
     public function create($data)
     {
         //SQLを実行
-        $stmt = $this->db_manager->dbh->prepare('INSERT INTO'. $this->table . '(title, user_name, user_icon, user_comment) VALUES (?,?,?,?)');
+        $stmt = $this->db_manager->dbh->prepare('INSERT INTO '. $this->table . '(title, comment) VALUES (?,?)');
         //実行
         $stmt->execute($data);
     }
@@ -24,5 +26,12 @@ class Threads extends Model
         $thread = $stmt->fetch();
         // 返却
         return $thread;
+    }
+
+    // コメントを更新する
+    public function update($data)
+    {
+        $stmt = $this->db_manager->dbh->prepare('UPDATE ' . $this->table . 'SET title = ?, comments = ? WHERE id = ?');
+        $stmt->execute($data);
     }
 }
