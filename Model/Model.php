@@ -45,7 +45,8 @@ class Model
         // prepare
         // dbhのメソッド
         // PDOインスタンスのメソッド
-        $stmt = $this->db_manager->dbh->prepare('SELECT * FROM ' . $this->table . ' ORDER BY created DESC');
+        // セレクトから（FROM)　ORDER BYは、並び順を変えること。今回はid
+        $stmt = $this->db_manager->dbh->prepare('SELECT * FROM ' . $this->table . ' ORDER BY id DESC');
 
         // $dbh === PDOクラスのインスタンス
         // $dbh->prepare('SELECT * FROM ' . $this->table);

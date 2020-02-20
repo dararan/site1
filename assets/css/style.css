@@ -5,19 +5,16 @@
 }
 
 body{
-  margin-top: 0;
-  margin-left: 0;
-  margin-right: 0;
+  background-image: url(assets/img/34.jpg);
+  background-size: cover;
+  /* background-color: yellow; */
 }
 
 
-
-
-
 header{
-  background-color: chartreuse;
+  background-color: rgb(247, 233, 243);
   display: flex;
-  height: 110px;
+  height: 120px;
   justify-content: space-between;
   margin-left: auto;
   margin-right: auto;
@@ -25,22 +22,22 @@ header{
 
 header_left{
   margin-left: 50px;
-  margin-top: 25px;
+  margin-top: 10px;
 
 }
 
-header_raight{
-  margin-right: 5px;
-  width: 250px;
-}
 
-header_raight ul {
+.login {
   list-style-type: none;
   display: flex;
-  margin-left: 50px;
+  margin-left: 50px; 
   margin-right: 50px;
-  margin-top: 30px;
+  margin-top: 0px;
   justify-content: space-between;
+  height: 100px;
+  width: 170px;
+  /* background-color: burlywood; */
+  align-items: center;
 }
 
 
@@ -52,14 +49,43 @@ header_raight ul {
   
 }
 
-.top{
-  color: grey;
-  font-size: 30px;
 
-}
+.top{
+  color: rgb(248, 132, 238); /* 文字色 */
+  padding: 5px 10px; /* 上下・左右の余白 */
+  position: relative;
+  text-shadow: -1px -1px 1px #e18692, 1px -1px 1px #e18692, -1px 1px 1px #e18692, 1px 1px 1px #e18692; /* 文字の縁取り */
+  z-index: 0;
+  font-size: 40px;
+ }
+ .top:before{
+  background: repeating-linear-gradient(45deg, #f5d5da, #f5d5da 4px, #fcf0f1 0, #fcf0f1 7px); /* 斜めボーダー */
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -2;
+ }
+ .top:after{
+  background: linear-gradient(180deg, rgba(255,255,255,1), rgba(255,255,255,.1)); /* 白いグラデーション */
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;	
+ }
 
 h4{
-  font-size: 30px;
+  font-size: 35px;
+  margin-left: 100px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  color: rgba(233, 30, 99, 0.7);
+    text-shadow: 3px 3px #fff, 4px 4px 0 #5d6f77, 4px 2px 0 #5d6f77, 2px 4px 0 #5d6f77, 2px 2px 0 #5d6f77;
 }
 
 .thread ul{
@@ -67,30 +93,42 @@ h4{
 }
 
 .threads_box{
-  background-color: khaki;
+  background-color: rgb(201, 250, 191);
   display: flex;
   flex-direction: column;
   height: 1500px;
-  width: 1000px;
+  width: 1200px;
   margin-right: auto;
   margin-left: auto;
   margin-top: 20px;
   margin-bottom: 20px;
-
+  border-radius: 2%;
 }
 
 .thread{
-  height: 250px;
-  width:250px;
+  height: 300px;
+  width:255px;
   background-color: white;
   display: flex;
   align-content: space-around;
   flex-direction: column;
-  margin-top: 20px;
-  margin-left: 15px;
-  border-radius: 15%;
+  margin-top: 40px;
+  margin-left: 50px;
+  border-radius: 5%;
 }
 
 .user{
   margin-top: 40px;
+  margin-left: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.btn{
+  font-size: 25px;
+  background-color:skyblue;
+  margin-left: 90%;
+}
+
+.title{
+  font-size: 20px;
 }
